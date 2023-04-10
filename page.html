@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="Calc.css" />
+        <title>
+            calculator
+        </title>
+    </head>
+    <body>
+      <div id="container">
+        <div id="screen"></div>
+        <script>
+          let display = document.getElementById("screen");
+        </script>
+        <div id="main">
+          <main id="numbers">
+            <button id="AC" onclick="display.innerHTML = ''">AC</button>
+            <button id="DE" onclick="display.innerHTML = display.innerHTML.slice(0, -1);">DE</button>
+            <button id="dot" onclick="display.innerHTML += '.'">.</button>
+            <button id="one" onclick = "display.innerHTML += '1'">1</button>
+            <button id="two" onclick = "display.innerHTML += '2'">2</button>
+            <button id="three" onclick = "display.innerHTML += '3'">3</button>
+            <button id="four" onclick = "display.innerHTML += '4'">4</button>
+            <button id="five" onclick = "display.innerHTML += '5'">5</button>
+            <button id="six" onclick = "display.innerHTML += '6'">6</button>
+            <button id="seven" onclick = "display.innerHTML += '7'">7</button>
+            <button id="eight" onclick = "display.innerHTML += '8'">8</button>
+            <button id="nine" onclick = "display.innerHTML += '9'">9</button>
+            <button id="zero" onclick = "display.innerHTML += '0'">0</button>
+          </main>
+          <aside id="operators">
+            <button id="add" onclick = "display.innerHTML += '+'">+</button>
+            <button id="sub" onclick = "display.innerHTML += '-'">-</button>
+            <button id="div" onclick = "display.innerHTML += '/'">/</button>
+            <button id="mult" onclick = "display.innerHTML += '*'">*</button>
+            <button id="mod" onclick = "display.innerHTML += '%'">%</button>
+            <button id="pow" onclick = "display.innerHTML += '**'">**</button>
+            <button id="sqrt" onclick = "display.innerHTML = square();">Sqrt</button>
+            <script>
+              function square() {
+    let result = Math.sqrt(parseInt(display.innerHTML));
+    return result;
+};
+            </script>
+            <button id="rnd" onclick = "display.innerHTML = roundup()">Round</button>
+            <script>
+              function roundup() {
+                let result = Math.round(display.innerHTML);
+                return result;
+              };
+            </script>
+          </aside>
+        </div>
+        <button id="equals" onclick = "display.innerHTML = eval(display.innerHTML);">=</button>
+        <script src="Calc.js"></script>
+    </div>
+    </body>
+</html>
+   
